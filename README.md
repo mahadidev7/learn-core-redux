@@ -1,1 +1,1 @@
-# I am learning code redux
+# I am learning core redux
