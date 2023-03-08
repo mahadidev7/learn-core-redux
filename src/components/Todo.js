@@ -29,7 +29,7 @@ export default function Todo({ todo }) {
           type="checkbox"
           checked={completed}
           onChange={() => handleStatusChange(id)}
-          className="opacity-0 absolute rounded-full"
+          className="opacity-0 absolute rounded-full cursor-pointer"
         />
         {completed && (
           <svg
