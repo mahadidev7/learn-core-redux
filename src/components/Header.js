@@ -8,6 +8,7 @@ import { added, allCompleted, clearCompleted } from "../redux/todos/actions";
 export default function Header() {
   const dispatch = useDispatch();
   const [input, setInput] = useState();
+  const [customAlert, setCustomAlert] = useState(false);
 
   const handleInput = (e) => {
     setInput(e.target.value);
@@ -15,8 +16,14 @@ export default function Header() {
 
   const submitHandler = (e) => {
     e.preventDefault();
+
+    if(!input){
+      setCustomAlert(true)
+      return;
+    }
     dispatch(added(input));
     setInput("");
+    setCustomAlert(false)
   };
 
   const completeHandler = () => {
@@ -30,7 +37,7 @@ export default function Header() {
   return (
     <div>
       <form
-        className="flex items-center bg-gray-100 px-4 py-4 rounded-md"
+        className={`flex items-center bg-gray-100 px-4 py-4 rounded-md ${customAlert && 'border border-red-300'}`}
         onSubmit={submitHandler}
       >
         <img src={noteImage} className="w-6 h-6" alt="Add todo" />

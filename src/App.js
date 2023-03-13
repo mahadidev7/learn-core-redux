@@ -25,7 +25,7 @@ function App() {
         </div>
       </div>
     <div className="grid place-items-center bg-blue-100 px-6 font-sans">
-      <p className="pb-5">Create by Mahadidev7</p>
+      <p className="pb-5">Create by <a href="https://mahadidev7-portfolio.web.app/" target="_blank" rel="noreferrer">Mahadidev7</a></p>
     </div>
     </Provider>
   );
