@@ -4,7 +4,7 @@ import ProductForm from './ProductForm'
 import ProductItem from './ProductItem'
 
 function MainBody() {
-  const SELECT_CARTS = useSelector((state) => state.carts)
+  const SELECT_products = useSelector((state) => state.products)
 
   return (
     <main className="py-16">
@@ -12,7 +12,7 @@ function MainBody() {
       {/* <!-- products container --> */}
       <div className="productContainer" id="lws-productContainer">
         {
-          SELECT_CARTS?.map((product, key) => <ProductItem key={key} product={product} />)
+          SELECT_products?.map((product, key) => <ProductItem key={key} product={product} />)
         }
       </div>
       {/* <!-- products container ends --> */}

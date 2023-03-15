@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addProduct } from "../redux/carts/action";
+import { addProduct } from "../redux/products/action";
 
 const assetsOfProduct = {
   name: "",
@@ -9,6 +9,7 @@ const assetsOfProduct = {
   price: "",
   quantity: "",
   wasQuantity: "",
+  shopQuantity: 0,
 };
 
 const assetsOfErrors = {
@@ -57,12 +58,12 @@ function ProductForm() {
 
   dispatch(addProduct(productAssets))
 
+  console.log("=============productAssets=======================");
   // reset useState
-  setProductAssets(assetsOfProduct)
+  // setProductAssets(assetsOfProduct)
   };
 
-  console.log(errors);
-  console.log("=============errors=======================");
+ 
 
   return (
     <div>
