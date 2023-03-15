@@ -1,25 +1,19 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 import ProductForm from './ProductForm'
 import ProductItem from './ProductItem'
 
 function MainBody() {
-  return (
-    <main class="py-16">
-    <div class="productWrapper">
-      {/* <!-- products container --> */}
-      <div class="productContainer" id="lws-productContainer">
-        {/* <!-- product item --> */}
-        <ProductItem />
-        <ProductItem />
-        <ProductItem />
-        <ProductItem />
-        <ProductItem />
-        <ProductItem />
-        <ProductItem />
-        <ProductItem />
-        <ProductItem />
-        {/* <!-- product item ends --> */}
+  const SELECT_CARTS = useSelector((state) => state.carts)
 
+  return (
+    <main className="py-16">
+    <div className="productWrapper">
+      {/* <!-- products container --> */}
+      <div className="productContainer" id="lws-productContainer">
+        {
+          SELECT_CARTS?.map((product, key) => <ProductItem key={key} product={product} />)
+        }
       </div>
       {/* <!-- products container ends --> */}
       <ProductForm />

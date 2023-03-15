@@ -1,25 +1,26 @@
 import React from "react";
 
-function ProductItem() {
+function ProductItem({product}) {
+  const { id, name, category, img, price, quantity, wasQuantity} = product
   return (
-    <div class="lws-productCard">
+    <div className="lws-productCard">
       <img
-        class="lws-productImage"
-        src="https://i.dummyjson.com/data/products/59/thumbnail.jpg"
+        className="lws-productImage"
+        src={img}
         alt="product"
       />
-      <div class="p-4 space-y-2">
-        <h4 class="lws-productName">Spring and summershoes</h4>
-        <p class="lws-productCategory">Mens shoes</p>
-        <div class="flex items-center justify-between pb-2">
-          <p class="productPrice">
-            BDT <span class="lws-price">400</span>
+      <div className="p-4 space-y-2">
+        <h4 className="lws-productName">{name}</h4>
+        <p className="lws-productCategory">{category}</p>
+        <div className="flex items-center justify-between pb-2">
+          <p className="productPrice">
+            BDT <span className="lws-price">{price}</span>
           </p>
-          <p class="productQuantity">
-            QTY <span class="lws-quantity">10</span>
+          <p className="productQuantity">
+            QTY <span className="lws-quantity">{quantity}</span>
           </p>
         </div>
-        <button class="lws-btnAddToCart">Add To Cart</button>
+        <button className="lws-btnAddToCart">Add To Cart</button>
       </div>
     </div>
   );
