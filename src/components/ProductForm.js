@@ -58,12 +58,10 @@ function ProductForm() {
 
   dispatch(addProduct(productAssets))
 
-  console.log("=============productAssets=======================");
   // reset useState
-  // setProductAssets(assetsOfProduct)
+  setProductAssets(assetsOfProduct)
   };
 
- 
 
   return (
     <div>
@@ -85,6 +83,7 @@ function ProductForm() {
               onChange={(e) =>
                 setProductAssets((item) => ({ ...item, name: e.target.value }))
               }
+              value={productAssets.name}
             />
             {errors?.name && (
               <small style={{ color: "red" }}>product name empty!!!</small>
@@ -103,6 +102,7 @@ function ProductForm() {
                   category: e.target.value,
                 }))
               }
+              value={productAssets.category}
             />
             {errors?.category && (
               <small style={{ color: "red" }}>product category empty!!!</small>
@@ -118,6 +118,7 @@ function ProductForm() {
               onChange={(e) =>
                 setProductAssets((item) => ({ ...item, img: e.target.value }))
               }
+              value={productAssets.img}
             />
             {errors?.img && (
               <small style={{ color: "red" }}>product img empty!!!</small>
@@ -138,6 +139,7 @@ function ProductForm() {
                     price: Number(e.target.value),
                   }))
                 }
+              value={productAssets.price}
               />
               {errors?.price && (
                 <small style={{ color: "red" }}>product price empty!!!</small>
@@ -157,6 +159,7 @@ function ProductForm() {
                     wasQuantity: Number(e.target.value),
                   }))
                 }
+              value={productAssets.quantity}
               />
               {errors?.quantity && (
                 <small style={{ color: "red" }}>
